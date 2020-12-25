@@ -1,7 +1,10 @@
-@import "devicons";
-// @import "getSchwifty";
-// Attempted to implement local font with Rick and Morty lettering
+@font-face {
+  font-family: 'getSchwifty';
+  src: url('getSchwifty.ttf') format('truetype'),
+    url('getschwifty-webfont.woff') format('woff');
+}
 
+// Attempt to import a custom downloaded font.
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Welcome page responsive styling - dynamic: smooth scaling but not very performant on chrome
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -9,7 +12,6 @@
 .html,
 .body,
 #root {
-  font-family: "Orbitron", sans-serif;
   margin: 0 auto;
   display: flex;
   flex-flow: column nowrap;
@@ -23,6 +25,7 @@
   // These styles are responsive down to the smallest screen size
   //////////////////////////////////////////////////////////////
   .main-wrapper {
+    font-family: 'Orbitron', sans-serif;
     min-height: 85vh;
     min-width: 85vw;
     justify-content: center;
@@ -41,6 +44,10 @@
         margin: 5%;
         width: 30%;
       }
+
+      h1 {
+        font-family: 'getSchwifty', sans-serif;
+      }
     }
   }
 
@@ -49,7 +56,7 @@
   }
 
   .ui-center {
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Orbitron', sans-serif;
     margin-top: 1rem;
   }
 
@@ -233,7 +240,7 @@
   .html,
   .body,
   #root {
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Orbitron', sans-serif;
     margin: 0 auto;
     max-width: 1350px;
     min-height: 100vh;
@@ -248,10 +255,11 @@
       color: #27c208;
       display: flex;
       flex-flow: column;
-      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+        0 15px 12px rgba(0, 0, 0, 0.22);
 
       h1 {
-        font-family: "Orbitron", sans-serif;
+        font-family: 'Orbitron', sans-serif;
       }
 
       .grid-view {
@@ -365,7 +373,7 @@
   .html,
   .body,
   #root {
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Orbitron', sans-serif;
     margin: 0 auto;
     max-width: 1350px;
     min-height: 100vh;
@@ -381,10 +389,11 @@
       color: #27c208;
       display: flex;
       flex-flow: column;
-      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+        0 15px 12px rgba(0, 0, 0, 0.22);
 
       h1 {
-        font-family: "Orbitron", sans-serif;
+        font-family: 'Orbitron', sans-serif;
       }
 
       .grid-view {
