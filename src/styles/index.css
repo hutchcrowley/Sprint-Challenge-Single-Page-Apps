@@ -9,8 +9,7 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  max-width: 1350px;
-  min-width: 100vw;
+  max-width: 1200px;
   min-height: 100vh;
   max-height: 90vh;
 }
@@ -30,32 +29,36 @@
   flex-flow: column;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
-.html .main-wrapper header,
-.body .main-wrapper header,
-#root .main-wrapper header {
+.html .main-wrapper .ui-center-large,
+.body .main-wrapper .ui-center-large,
+#root .main-wrapper .ui-center-large {
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+}
+.html .main-wrapper .ui-center-large h1,
+.body .main-wrapper .ui-center-large h1,
+#root .main-wrapper .ui-center-large h1 {
+  font-family: "getSchwifty", sans-serif;
+  font-size: 3rem;
+}
+.html .main-wrapper .nav-buttons,
+.body .main-wrapper .nav-buttons,
+#root .main-wrapper .nav-buttons {
   width: 100%;
 }
-.html .main-wrapper header .view-characters-btn,
-.body .main-wrapper header .view-characters-btn,
-#root .main-wrapper header .view-characters-btn {
-  margin: 5%;
-  width: 30%;
-}
-.html .main-wrapper header h1,
-.body .main-wrapper header h1,
-#root .main-wrapper header h1 {
-  font-family: "getSchwifty", sans-serif;
-}
-.html h4,
-.body h4,
-#root h4 {
-  margin-top: 1rem;
+.html .main-wrapper .nav-buttons .view-characters-btn,
+.body .main-wrapper .nav-buttons .view-characters-btn,
+#root .main-wrapper .nav-buttons .view-characters-btn {
+  margin: 1rem;
+  width: 14rem;
+  height: 3.5rem;
+  height: 3.5rem;
 }
 .html .ui-center,
 .body .ui-center,
 #root .ui-center {
   font-family: "Orbitron", sans-serif;
-  margin-top: 1rem;
 }
 .html .grid-view,
 .body .grid-view,
@@ -250,9 +253,6 @@
   .html,
 .body,
 #root {
-    font-family: "Orbitron", sans-serif;
-    margin: 0 auto;
-    max-width: 1350px;
     min-height: 100vh;
     max-height: 90vh;
   }
@@ -402,10 +402,12 @@
 .body .main-wrapper,
 #root .main-wrapper {
     height: auto;
-    justify-content: center;
+    min-height: 90vh;
+    justify-content: space-around;
     text-align: center;
     align-items: center;
-    margin: 5% auto;
+    margin: 10% auto;
+    padding: 5%;
     background-color: #454040;
     color: #27c208;
     display: flex;
@@ -429,11 +431,8 @@
 .body .main-wrapper .main-img,
 #root .main-wrapper .main-img {
     display: block;
-    border-radius: 0;
-    width: 100%;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    margin: 0 auto;
+    border-radius: 2.5%;
+    border: 4px solid black;
   }
   .html .main-wrapper .view-characters-btn,
 .body .main-wrapper .view-characters-btn,

@@ -10,16 +10,16 @@ import './styles/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
-	return (
-		<main>
-			<Switch>
-				<Route exact path='/' component={WelcomePage} />
-				<Route path='/characters' component={CharacterList} />
-				<Route path='/locations' component={LocationsList} />
-				<Route component={NoRoute} />
-			</Switch>
-		</main>
-	)
+  return (
+    <main>
+      <Switch>
+        <Route exact path='/' component={WelcomePage} />
+        <Route path='/characters' component={CharacterList} />
+        <Route path='/locations' component={LocationsList} />
+        <Route component={NoRoute} />
+      </Switch>
+    </main>
+  )
 }
 
 export default App
