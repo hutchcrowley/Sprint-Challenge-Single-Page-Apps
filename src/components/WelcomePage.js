@@ -1,30 +1,34 @@
 import React from 'react'
 import NavButtons from './NavButtons.js'
+
 import UIfx from 'uifx'
+
+import sf1 from '../assets/sfx1.mp3'
+import sf2 from '../assets/sfx2.wav'
 import themesong from '../assets/themesong.wav'
 
 export default function WelcomePage () {
+  // create a variable to hold theme music on page load
   const theme = new UIfx(themesong)
 
-  theme.setVolume(0.2).play()
+  const beep = new UIfx(sf1)
+  const blorp = new UIfx(sf2)
 
   return (
-    <section className='main-wrapper'>
-      <>
-        <div className='ui-center-large'>
-          <h1>Rick &amp; Morty Fan Page</h1>
-        </div>
-        <img
-          className='main-img'
-          src='https://rickandmortyapi.com/api/character/avatar/1.jpeg'
-          alt='rick'
-        />
-        <h4>Wubba Lubba Dub Dubbzzz!</h4>
-        <NavButtons />
-        <h3 className='ui-center'>
-          Welcome to the ultimate fan site mother fuckers!
-        </h3>
-      </>
-    </section>
+    <>
+      <div className='ui-center-large'>
+        <h1>Rick &amp; Morty Fan Page</h1>
+      </div>
+      <img
+        className='main-img'
+        src='https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+        alt='rick'
+      />
+      <h4>Wubba Lubba Dub Dubbzzz!</h4>
+      <NavButtons theme={theme} sf1={beep} sf2={blorp} />
+      <h3 className='ui-center'>
+        Welcome to the ultimate fan site mother fuckers!
+      </h3>
+    </>
   )
 }

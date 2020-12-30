@@ -11,14 +11,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   return (
-    <main>
+    <div className='main-wrapper'>
       <Switch>
         <Route exact path='/' component={WelcomePage} />
         <Route path='/characters' component={CharacterList} />
         <Route path='/locations' component={LocationsList} />
         <Route component={NoRoute} />
       </Switch>
-    </main>
+    </div>
   )
 }
 

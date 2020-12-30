@@ -20,7 +20,7 @@ const SearchForm = props => {
 
   const submitSearch = event => {
     event.preventDefault()
-    let e = event.target.value
+    const e = event.target.value
     if (e === undefined) {
       resetInputField()
     } else {

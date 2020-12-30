@@ -12,40 +12,40 @@
 .html,
 .body,
 #root {
-  margin: 0 auto;
+  // margin: 0 auto;
   display: flex;
-  flex-flow: column nowrap;
+  justify-content: center;
   align-items: center;
-  max-width: 1200px;
-  // min-width: 100vw;
-  min-height: 100vh;
-  max-height: 90vh;
+  width: 100vw;
+  height: 100vh;
 
   ///////////////////////////////////////////////////////////////
   // These styles are responsive down to the smallest screen size
   //////////////////////////////////////////////////////////////
+
   .main-wrapper {
-    font-family: 'Orbitron', sans-serif;
-    min-height: 85vh;
     min-width: 85vw;
+    height: 85vh;
+    font-family: 'Orbitron', sans-serif;
     justify-content: center;
     text-align: center;
-    align-items: center;
-    margin: 5% auto;
+    align-content: center;
+    // margin: 5% auto;
     background-color: rgb(69, 64, 64);
     color: #27c208;
     display: flex;
     flex-flow: column;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 
+    h1 {
+      font-family: 'getSchwifty', sans-serif;
+      font-size: 3rem;
+    }
+
     .ui-center-large {
       width: 100%;
       margin-top: 2rem;
       text-align: center;
-      h1 {
-        font-family: 'getSchwifty', sans-serif;
-        font-size: 3rem;
-      }
     }
 
     .nav-buttons {
@@ -57,180 +57,181 @@
         height: 3.5rem;
       }
     }
-  }
 
-  .ui-center {
-    font-family: 'Orbitron', sans-serif;
-  }
+    .ui-center {
+      font-family: 'Orbitron', sans-serif;
+    }
 
-  .grid-view {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-evenly;
-    height: auto;
-  }
-
-  .main-img {
-    border: 8px solid black;
-    display: block;
-    border-radius: 100%;
-    margin: 2rem auto;
-  }
-
-  .list-wrap {
-    height: auto;
-    max-width: 1360px;
-    min-width: 90vw;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-items: center;
-    align-items: center;
-    background-color: rgb(69, 64, 64);
-    color: #27c208;
-    padding: 0 7%;
-    padding-bottom: 2rem;
-
-    .results-display {
+    .grid-view {
       display: flex;
-      align-items: center;
-
-      h4 {
-        margin: {
-          right: 1rem;
-        }
-      }
-
-      h3 {
-        color: #ffffff;
-        margin-bottom: 0;
-        margin-top: 0.2rem;
-      }
-    }
-
-    h1 {
-      font-size: 50pt;
-      margin: {
-        top: 2rem;
-        bottom: 0.5rem;
-      }
-    }
-  }
-
-  .character-list {
-    width: 100%;
-    max-width: 30rem;
-    max-height: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-  }
-
-  .location-list {
-    // width: auto;
-    // min-width: 90vw;
-    height: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    align-content: center;
-
-    .residents-display {
+      flex-flow: column wrap;
+      justify-content: space-evenly;
       height: auto;
     }
-  }
 
-  .home-btn {
-    border-radius: 10px;
-    padding: 0.5rem 2rem;
-    border: {
-      bottom: 5px solid black;
-      right: 5px solid black;
-    }
-    align-self: flex-start;
-
-    :hover {
-      border: none;
+    .main-img {
+      border: 8px solid black;
+      display: block;
+      border-radius: 100%;
+      margin: 2rem auto;
     }
 
-    a {
+    .list-wrap {
+      max-height: 100%;
+      min-width: 90vw;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-items: center;
+      align-items: center;
+      background-color: rgb(69, 64, 64);
+      color: #27c208;
+      padding: 0 7%;
+      padding-bottom: 2rem;
+
+      .results-display {
+        display: flex;
+        align-items: center;
+
+        h4 {
+          margin: {
+            right: 1rem;
+          }
+        }
+
+        h3 {
+          color: #ffffff;
+          margin-bottom: 0;
+          margin-top: 0.2rem;
+        }
+      }
+
+      h1 {
+        font-size: 50pt;
+        margin: {
+          top: 2rem;
+          bottom: 0.5rem;
+        }
+      }
+    }
+
+    .character-list {
       width: 100%;
-      text-decoration: none;
-      color: #000;
+      max-width: 30rem;
+      max-height: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
     }
-  }
 
-  .search-form-wrap {
-    width: 100%;
+    .location-list {
+      // width: auto;
+      // min-width: 90vw;
+      height: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      align-content: center;
 
-    form {
-      display: inline-flex;
-      flex-flow: row nowrap;
-      max-height: 6rem;
-      width: 100%;
-      padding: 1rem 7rem;
+      .residents-display {
+        height: auto;
+      }
+    }
 
-      .search-bar {
-        text-align: center;
-        border-radius: 10px;
+    .home-btn {
+      border-radius: 10px;
+      padding: 0.5rem 2rem;
+      border: {
+        bottom: 5px solid black;
+        right: 5px solid black;
+      }
+      align-self: flex-start;
+
+      :hover {
+        border: none;
+      }
+
+      a {
         width: 100%;
-        margin-right: 2rem;
-        margin-left: 4rem;
-      }
-
-      .search-button {
-        border-radius: 10px;
-        height: fit-content;
+        text-decoration: none;
+        color: #000;
       }
     }
-  }
 
-  .card {
-    display: inline-flex;
-    border: 35px solid #131512;
-    height: auto;
-    min-height: 38rem;
-    width: 38rem;
-    margin-top: 1rem;
-    border-radius: 25%;
-    text-align: left;
+    .card {
+      display: inline-flex;
+      border: 35px solid #131512;
+      height: auto;
+      min-height: 38rem;
+      width: 38rem;
+      margin-top: 1rem;
+      border-radius: 25%;
+      text-align: left;
 
-    .card-img {
-      border-radius: 20%;
-    }
+      .card-img {
+        border-radius: 20%;
+      }
 
-    .card-img-overlay {
-      border-radius: 20%;
-      background-color: #00000031;
+      .card-img-overlay {
+        border-radius: 20%;
+        background-color: #00000031;
 
-      .card-body {
-        padding: 2.5rem 2rem 0 0;
+        .card-body {
+          padding: 2.5rem 2rem 0 0;
 
-        h2 {
-          font-size: 28pt;
-          font-weight: 600;
-          margin-bottom: 0.4rem;
-          background-color: rgba(0, 0, 0, 0.276);
-        }
+          h2 {
+            font-size: 28pt;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            background-color: rgba(0, 0, 0, 0.276);
+          }
 
-        .card-text-h3 {
-          margin-top: 0;
-          color: #bfdfb8;
-          background-color: rgba(0, 0, 0, 0.276);
-          font-weight: bold;
+          .card-text-h3 {
+            margin-top: 0;
+            color: #bfdfb8;
+            background-color: rgba(0, 0, 0, 0.276);
+            font-weight: bold;
+          }
         }
       }
     }
-  }
 
-  .spinner-center {
-    height: auto;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
+    // styles for search bar component
+    .search-form-wrap {
+      width: 100%;
 
-    .spinner {
-      height: 700px;
+      form {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        max-height: 6rem;
+        width: 100%;
+        padding: 1rem 7rem;
+
+        .search-bar {
+          text-align: center;
+          border-radius: 10px;
+          width: 100%;
+          margin-right: 2rem;
+          margin-left: 4rem;
+        }
+
+        .search-button {
+          border-radius: 10px;
+          height: fit-content;
+        }
+      }
+    }
+
+    // styles for content loading component
+    .spinner-center {
+      height: auto;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+
+      .spinner {
+        height: 700px;
+      }
     }
   }
 }
