@@ -15,6 +15,7 @@ export default function LocationsList () {
   const [count, setCount] = useState()
   const [pages, setPages] = useState()
 
+  // this func handles
   const handlePageChange = pageNumber => {
     console.log(`locations: active page is: ${pageNumber}`)
     setActivePage(pageNumber)
@@ -23,7 +24,7 @@ export default function LocationsList () {
   // useEffect hook call to get list of locations with the optional search variable query
   useEffect(() => {
     axios
-      .get(`https://rtickandmortyapi.com/api/location?name=${query}`)
+      .get(`https://rickandmortyapi.com/api/location?name=${query}`)
       .then(setIsLoading(true))
       .then(res => {
         console.log('API data: ', res.data)

@@ -22,6 +22,8 @@ export default function CharacterList (props) {
     setActivePage(pageNumber)
   }
 
+  // TODO: re-factor this code remove api calls to outside of useEffect and save values in state before conditional rendering
+
   useEffect(() => {
     !props.idArray
       ? axios

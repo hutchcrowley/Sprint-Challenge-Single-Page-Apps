@@ -10,7 +10,7 @@ export default function NavButtons (props) {
       <NavLink to='/characters'>
         <button
           className='view-characters-btn'
-          onClick={() => props.beep.play()}
+          onClick={() => props.sf1.play()}
         >
           View Characters
         </button>
@@ -18,7 +18,7 @@ export default function NavButtons (props) {
       <NavLink to='/locations'>
         <button
           className='view-characters-btn'
-          onClick={() => props.blorp.play()}
+          onClick={() => props.sf2.play()}
         >
           View Locations
         </button>

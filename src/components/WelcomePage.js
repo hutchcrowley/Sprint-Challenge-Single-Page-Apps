@@ -8,9 +8,8 @@ import sf2 from '../assets/sfx2.wav'
 import themesong from '../assets/themesong.wav'
 
 export default function WelcomePage () {
-  // create a variable to hold theme music on page load
+  // create variables to hold theme music/ sfx on page load
   const theme = new UIfx(themesong)
-
   const beep = new UIfx(sf1)
   const blorp = new UIfx(sf2)
 
