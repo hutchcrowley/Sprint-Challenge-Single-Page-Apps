@@ -78,9 +78,6 @@
 #root .main-wrapper .list-wrap {
   max-height: 100%;
   min-width: 90vw;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-items: center;
   align-items: center;
   background-color: #454040;
   color: #27c208;
@@ -118,18 +115,29 @@
   width: 100%;
   max-width: 30rem;
   max-height: auto;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
+  display: grid;
+  border: 4px solid blue;
+  border-radius: 4px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(1fr);
+  column-gap: 1px;
+  row-gap: 1px;
+  align-content: center;
+  text-align: center;
 }
 .html .main-wrapper .location-list,
 .body .main-wrapper .location-list,
 #root .main-wrapper .location-list {
   height: auto;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
+  display: grid;
+  border: 4px solid blue;
+  border-radius: 4px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(1fr);
+  column-gap: 1px;
+  row-gap: 1px;
   align-content: center;
+  text-align: center;
 }
 .html .main-wrapper .location-list .residents-display,
 .body .main-wrapper .location-list .residents-display,

@@ -25,36 +25,22 @@ export default function CharacterList (props) {
   // TODO: re-factor this code remove api calls to outside of useEffect and save values in state before conditional rendering
 
   useEffect(() => {
-    !props.idArray
-      ? axios
-          .get(`https://rickandmortyapi.com/api/character/?name=${query}`)
-          .then(setIsLoading(true))
-          .then(res => {
-            console.log('Data From the API: ', res.data)
-            console.log('Info From the API: ', res.data.info)
-            setCount(res.data.info.count)
-            setCharacters(res.data.results)
-            setPages(res.data.info.pages)
-            setIsLoading(false)
-          })
-          .catch(err => {
-            console.log('Error, data was not returned from server', err)
-            setIsLoading(false)
-          })
-      : axios
-          .get(`https://rickandmortyapi.com/api/character/${props.idArray}`)
-          .then(setIsLoading(true))
-          .then(res => {
-            console.log('idArray in useEffect: ', props.idArray)
-            setCount(res.data.info.count)
-            setCharacters(res.data.results)
-            setIsLoading(false)
-          })
-          .catch(err => {
-            console.log('Error, data not returned from server', err)
-            setIsLoading(false)
-          })
-  }, [query, props.idArray])
+    axios
+      .get(`https://rickandmortyapi.com/api/character/?name=${query}`)
+      .then(setIsLoading(true))
+      .then(res => {
+        console.log('Data From the API: ', res.data)
+        console.log('Info From the API: ', res.data.info)
+        setCount(res.data.info.count)
+        setCharacters(res.data.results)
+        setPages(res.data.info.pages)
+        setIsLoading(false)
+      })
+      .catch(err => {
+        console.log('Error, data was not returned from server', err)
+        setIsLoading(false)
+      })
+  }, [query])
 
   useEffect(() => {
     axios

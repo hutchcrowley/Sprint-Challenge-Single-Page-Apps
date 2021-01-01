@@ -15,7 +15,7 @@ export default function LocationsList () {
   const [count, setCount] = useState()
   const [pages, setPages] = useState()
 
-  // this func handles
+  // this func handles updates to the active page
   const handlePageChange = pageNumber => {
     console.log(`locations: active page is: ${pageNumber}`)
     setActivePage(pageNumber)
