@@ -116,7 +116,6 @@
 .body .main-wrapper .character-list,
 #root .main-wrapper .character-list {
   display: grid;
-  border: 4px solid blue;
   border-radius: 4px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(1fr);
@@ -128,19 +127,15 @@
 .html .main-wrapper .location-list,
 .body .main-wrapper .location-list,
 #root .main-wrapper .location-list {
-  display: grid;
-  border: 4px solid blue;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
   border-radius: 4px;
-  grid-template-columns: 10vw 10vw 10vw;
-  grid-template-rows: repeat(1fr);
-  column-gap: 1px;
-  row-gap: 1px;
   align-content: center;
-  text-align: center;
 }
-.html .main-wrapper .location-list .residents-display,
-.body .main-wrapper .location-list .residents-display,
-#root .main-wrapper .location-list .residents-display {
+.html .main-wrapper .residents-display,
+.body .main-wrapper .residents-display,
+#root .main-wrapper .residents-display {
   height: auto;
 }
 .html .main-wrapper .home-btn,
@@ -170,8 +165,9 @@
   display: flex;
   border: 2.5rem solid #131512;
   height: auto;
-  max-height: 38rem;
-  max-width: 38rem;
+  max-height: 30rem;
+  width: auto;
+  min-width: 30rem;
   margin: 1rem;
   border-radius: 25%;
   text-align: left;

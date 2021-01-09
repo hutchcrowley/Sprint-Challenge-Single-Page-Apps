@@ -9,7 +9,7 @@ import Pagination from 'react-js-pagination'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 
-export default function CharacterList (props) {
+const CharacterList = props => {
   const [isLoading, setIsLoading] = useState(false)
   const [characters, setCharacters] = useState([])
   const [query, setQuery] = useState('')
@@ -100,3 +100,5 @@ export default function CharacterList (props) {
     <Spinner />
   )
 }
+
+export default CharacterList

@@ -73,7 +73,7 @@ export default function LocationsList () {
         activepage={activePage}
         itemsCountPerPage={20}
         totalItemsCount={pages}
-        onChange={handlePageChange}
+        onChange={handlePageChange()}
         itemClass='page-item'
         linkClass='page-link'
       />
@@ -81,6 +81,7 @@ export default function LocationsList () {
         {locations.map(location => {
           return (
             <LocationCard
+              key={location.id}
               name={location.name}
               type={location.type}
               dimension={location.dimension}

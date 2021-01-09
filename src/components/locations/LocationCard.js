@@ -14,10 +14,10 @@ const LocationCard = ({ name, type, dimension, residents, id }) => {
   const handleClick = (e, residents) => {
     e.stopPropagation()
     setResidentArr(residents)
+
     const idArr = []
-    let residentsDisplay
-    residentsDisplay = residentArr.map(resident => {
-      let id = resident.toString().split('/')
+    const residentsDisplay = residentArr.map(resident => {
+      const id = resident.toString().split('/')
       // console.log(id[5])
       idArr.push(id[5])
       return residentsDisplay
