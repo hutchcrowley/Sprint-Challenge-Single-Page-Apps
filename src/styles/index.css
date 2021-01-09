@@ -133,9 +133,9 @@
   border-radius: 4px;
   align-content: center;
 }
-.html .main-wrapper .residents-display,
-.body .main-wrapper .residents-display,
-#root .main-wrapper .residents-display {
+.html .main-wrapper .location-list .residents-display,
+.body .main-wrapper .location-list .residents-display,
+#root .main-wrapper .location-list .residents-display {
   height: auto;
 }
 .html .main-wrapper .home-btn,
@@ -143,6 +143,7 @@
 #root .main-wrapper .home-btn {
   border-radius: 10px;
   padding: 0.5rem 2rem;
+  background-color: #fff;
   border-bottom: 5px solid black;
   border-right: 5px solid black;
   align-self: flex-start;
@@ -452,6 +453,7 @@
     margin-bottom: 1rem;
     border-radius: 10px;
     height: fit-content;
+    background-color: #fff;
   }
   .html .character-list-wrap h1,
 .body .character-list-wrap h1,

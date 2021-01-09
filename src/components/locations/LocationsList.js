@@ -11,15 +11,9 @@ export default function LocationsList () {
   const [isLoading, setIsLoading] = useState(false)
   const [locations, setLocations] = useState([])
   const [query, setQuery] = useState(null)
-  const [activePage, setActivePage] = useState()
-  const [count, setCount] = useState()
+  const [activePage, setActivePage] = useState(null)
+  const [count, setCount] = useState(null)
   const [pages, setPages] = useState()
-
-  // this func handles updates to the active page
-  const handlePageChange = pageNumber => {
-    console.log(`locations: active page is: ${pageNumber}`)
-    setActivePage(pageNumber)
-  }
 
   // useEffect hook call to get list of locations with the optional search variable query
   useEffect(() => {
@@ -56,12 +50,18 @@ export default function LocationsList () {
       })
   }, [activePage])
 
+  // this func handles updates to the active page
+  const handlePageChange = pageNumber => {
+    console.log(`locations: active page is: ${pageNumber}`)
+    setActivePage(pageNumber)
+  }
+
   return !isLoading ? (
     <section className='list-wrap'>
       <h1>Location List</h1>
-      <button className='home-btn'>
-        <NavLink to='/'>Home</NavLink>
-      </button>
+      <NavLink className='home-btn' to='/'>
+        Home
+      </NavLink>
       <div className='search-form-wrap'>
         <SearchForm search={setQuery} name='Enter Location' />
       </div>
@@ -73,7 +73,7 @@ export default function LocationsList () {
         activepage={activePage}
         itemsCountPerPage={20}
         totalItemsCount={pages}
-        onChange={handlePageChange()}
+        onChange={handlePageChange}
         itemClass='page-item'
         linkClass='page-link'
       />

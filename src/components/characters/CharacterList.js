@@ -13,14 +13,9 @@ const CharacterList = props => {
   const [isLoading, setIsLoading] = useState(false)
   const [characters, setCharacters] = useState([])
   const [query, setQuery] = useState('')
-  const [activePage, setActivePage] = useState()
-  const [count, setCount] = useState()
+  const [activePage, setActivePage] = useState(null)
+  const [count, setCount] = useState(null)
   const [pages, setPages] = useState()
-
-  const handlePageChange = pageNumber => {
-    console.log(`active page is ${pageNumber}`)
-    setActivePage(pageNumber)
-  }
 
   // TODO: re-factor this code remove api calls to outside of useEffect and save values in state before conditional rendering
 
@@ -58,12 +53,17 @@ const CharacterList = props => {
       })
   }, [activePage])
 
+  const handlePageChange = pageNumber => {
+    console.log(`active page is ${pageNumber}`)
+    setActivePage(pageNumber)
+  }
+
   return !isLoading ? (
     <section className='list-wrap'>
       <h1>Character List</h1>
-      <button className='home-btn'>
+      <input className='home-btn'>
         <NavLink to='/'>Home</NavLink>
-      </button>
+      </input>
       <div className='search-form-wrap'>
         <SearchForm search={setQuery} name='Enter Character' />
       </div>

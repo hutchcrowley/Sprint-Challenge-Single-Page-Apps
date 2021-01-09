@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import CharacterList from '../characters/CharacterList'
 
-const LocationCard = ({ name, type, dimension, residents, id }) => {
+const LocationCard = ({ name, type, dimension, residents, id, key }) => {
   console.log('residents property: ', residents)
 
   // slicing the array of residents per location to implement a display more button
@@ -11,6 +11,7 @@ const LocationCard = ({ name, type, dimension, residents, id }) => {
   // setting a variable to show the unmber of items to display based upon user input
   const [idArray, setIdArray] = useState([])
 
+  // function to handle displaying residents per location
   const handleClick = (e, residents) => {
     e.stopPropagation()
     setResidentArr(residents)
@@ -26,6 +27,7 @@ const LocationCard = ({ name, type, dimension, residents, id }) => {
     setIdArray(idArr)
     console.log('idArray variable: ', idArray)
   }
+
   return (
     <Router>
       <div>
@@ -34,7 +36,7 @@ const LocationCard = ({ name, type, dimension, residents, id }) => {
           render={props => <CharacterList {...props} idArray={idArray} />}
         />
 
-        <Card key={id}>
+        <Card key={key}>
           <Card.Body>
             <h2>{name}</h2>
             <h3 className='card-text-h3'>Type: </h3>

@@ -23,6 +23,14 @@ export default function NavButtons (props) {
           View Locations
         </button>
       </NavLink>
+      <NavLink to='/episodes'>
+        <button
+          className='view-characters-btn'
+          onClick={() => props.sf2.play()}
+        >
+          View Episodes
+        </button>
+      </NavLink>
     </div>
   )
 }

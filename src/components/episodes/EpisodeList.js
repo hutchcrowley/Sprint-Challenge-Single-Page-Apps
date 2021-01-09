@@ -5,6 +5,7 @@ import Spinner from '../Spinner'
 
 import Pagination from 'react-js-pagination'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom'
 //
 //
 // API scema for listing episodes
@@ -18,22 +19,17 @@ import axios from 'axios'
 //
 //
 
-const EpsiodesList = () => {
-  const [isLoading, setIsLaoding] = useState(false)
+export default function EpsiodeList () {
+  const [isLoading, setIsLoading] = useState(false)
   const [episodes, setEpisodes] = useState([])
-  const [query, setQuery] = useState(null)
+  const [query, setQuery] = useState('')
   const [activePage, setActivePage] = useState()
   const [count, setCount] = useState()
-
-  // function to update active page
-  const handlePageChange = pageNumber => {
-    console.log(`active page is ${pageNumber}`)
-    setActivePage(pageNumber)
-  }
+  const [pages, setPages] = useState()
 
   useEffect(() => {
     axios
-      .get(`https://rickandmortyapi.com/api/episodes/name=${query}`)
+      .get(`https://rickandmortyapi.com/api/episode?name=${query}`)
       .then(setIsLoading(true))
       .then(res => {
         console.log('Data from the API: ', res.data)
@@ -49,12 +45,34 @@ const EpsiodesList = () => {
       })
   }, [query])
 
+  useEffect(() => {
+    axios
+      .get(`https://rickandmortyapi.com/api/episode?page=${activePage}`)
+      .then(setIsLoading(true))
+      .then(res => {
+        console.log('API data: ', res.data)
+        setCount(res.data.info.count)
+        setEpisodes(res.data.results)
+        setIsLoading(false)
+      })
+      .catch(err => {
+        console.log('Error: data not returned from API: ', err)
+        setIsLoading(false)
+      })
+  }, [activePage])
+
+  // function to update active page
+  const handlePageChange = pageNumber => {
+    console.log(`active page is ${pageNumber}`)
+    setActivePage(pageNumber)
+  }
+
   return !isLoading ? (
     <section className='list-wrap'>
       <h1>Episode List</h1>
-      <button className='home-btn'>
-        <Navlink to='/'>Home</Navlink>
-      </button>
+      <NavLink className='home-btn' to='/'>
+        Home
+      </NavLink>
       <div className='search-form-wrap'>
         <SearchForm search={setQuery} name='Enter Episode' />
       </div>
@@ -63,24 +81,25 @@ const EpsiodesList = () => {
         <h3>{count}</h3>
       </div>
       <Pagination
-        activepage={activepage}
+        activepage={activePage}
         itemsCountPerPage={20}
         totalItensCount={pages}
-        onChange={handlePageChange()}
+        onChange={handlePageChange}
         itemClass='page-item'
         linkClass='page-link'
       />
       <div className='episode-list'>
         {episodes.map(episode => {
           return (
-            <EpisodeCard
-              key={episode.id}
-              episodename={episode.name}
-              airdate={episode.air_date}
-              episode={episode.episode}
-              characters={episode.characters}
-              link={episode.url}
-            />
+            <div key={episode.id}>
+              <EpisodeCard
+                episodename={episode.name}
+                airdate={episode.air_date}
+                episode={episode.episode}
+                characters={episode.characters}
+                link={episode.url}
+              />
+            </div>
           )
         })}
       </div>
@@ -89,5 +108,3 @@ const EpsiodesList = () => {
     <Spinner />
   )
 }
-
-export default EpisodesList

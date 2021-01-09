@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 
+//
+// This component encapsulates the search functionality. It caputures the input from the text box, and sends that to its parent compoinent, which then fires a useEffect call, appending the query variable to the URL
+//
+
 const SearchForm = props => {
   console.log('props in the SearchForm component: ', props)
 

@@ -130,14 +130,16 @@
       flex-flow: column wrap;
       border-radius: 4px;
       align-content: center;
-    }
-    .residents-display {
-      height: auto;
+
+      .residents-display {
+        height: auto;
+      }
     }
 
     .home-btn {
       border-radius: 10px;
       padding: 0.5rem 2rem;
+      background-color: #fff;
       border: {
         bottom: 5px solid black;
         right: 5px solid black;
@@ -429,6 +431,7 @@
         margin-bottom: 1rem;
         border-radius: 10px;
         height: fit-content;
+        background-color: #fff;
       }
 
       h1 {
