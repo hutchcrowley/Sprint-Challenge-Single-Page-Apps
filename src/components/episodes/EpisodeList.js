@@ -17,7 +17,7 @@ export default function EpsiodeList (props) {
   const [pages, setPages] = useState()
 
   //
-  // API scema for listing episodes
+  // API schema for listing episodes
   // id - int - episode id
   // name - string - episode name
   // air_date - string - air date of episode
@@ -93,7 +93,7 @@ export default function EpsiodeList (props) {
         itemClass='page-item'
         linkClass='page-link'
       />
-      <div className='episode-list'>
+      <div className='inner-list'>
         {episodes.map(episode => {
           return (
             <div key={episode.id}>

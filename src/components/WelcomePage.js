@@ -13,6 +13,8 @@ export default function WelcomePage () {
   const sfx2 = new UIfx(sf2)
   const theme = new UIfx(themesong)
 
+  theme.setVolume(0.04).play()
+
   return (
     <>
       <div className='ui-center-large'>

@@ -7,7 +7,7 @@ import Pagination from 'react-js-pagination'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 
-export default function LocationsList () {
+export default function LocationsList (props) {
   const [isLoading, setIsLoading] = useState(false)
   const [locations, setLocations] = useState([])
   const [query, setQuery] = useState(null)
@@ -57,6 +57,7 @@ export default function LocationsList () {
     setActivePage(pageNumber)
   }
 
+  console.log('props in LocationsList: ', props)
   return !isLoading ? (
     <section className='list-wrap'>
       <h1>Location List</h1>
@@ -78,7 +79,7 @@ export default function LocationsList () {
         itemClass='page-item'
         linkClass='page-link'
       />
-      <div className='location-list'>
+      <div className='inner-list'>
         {locations.map(location => {
           return (
             <LocationCard

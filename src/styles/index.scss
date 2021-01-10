@@ -23,9 +23,9 @@
   //////////////////////////////////////////////////////////////
 
   .main-wrapper {
-    margin-top: 8vh;
+    margin-top: 4vh;
     margin-bottom: 4vh;
-    min-width: 85vw;
+    min-width: 88vw;
     height: auto;
     min-height: 85vh;
     font-family: 'Orbitron', sans-serif;
@@ -45,7 +45,7 @@
 
     .ui-center-large {
       width: 100%;
-      margin-top: 2rem;
+      margin: 2.5rem auto;
       text-align: center;
     }
 
@@ -113,7 +113,7 @@
       }
     }
 
-    .character-list {
+    .inner-list {
       display: grid;
       border-radius: 4px;
       grid-template-columns: 1fr 1fr 1fr;
@@ -124,17 +124,17 @@
       text-align: center;
     }
 
-    .location-list {
-      width: 100%;
-      display: flex;
-      flex-flow: column wrap;
-      border-radius: 4px;
-      align-content: center;
+    // .location-list {
+    //   width: 100%;
+    //   display: flex;
+    //   flex-flow: column wrap;
+    //   border-radius: 4px;
+    //   align-content: center;
 
-      .residents-display {
-        height: auto;
-      }
-    }
+    //   .residents-display {
+    //     height: auto;
+    //   }
+    // }
 
     .home-btn {
       border-radius: 10px;
@@ -159,11 +159,8 @@
 
     .card {
       display: flex;
-      border: 2.5rem solid #131512;
-      height: auto;
-      max-height: 30rem;
-      width: auto;
-      min-width: 30rem;
+      flex-basis: 2rem;
+      border: 1.5rem solid #131512;
       margin: 1rem;
       border-radius: 25%;
       text-align: left;
@@ -178,13 +175,14 @@
 
         .card-body {
           h2 {
-            font-size: 28pt;
+            font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 0.4rem;
             background-color: rgba(0, 0, 0, 0.276);
           }
 
           .card-text-h3 {
+            font-size: 1rem;
             margin-top: 0;
             color: #bfdfb8;
             background-color: rgba(0, 0, 0, 0.276);
@@ -276,7 +274,7 @@
       }
     }
 
-    .character-list-wrap {
+    .list-wrap {
       height: auto;
       max-width: 1360px;
       display: flex;
@@ -320,21 +318,17 @@
         }
       }
 
-      .character-list {
+      .inner-list {
         width: 100%;
         max-width: 30rem;
         height: auto;
 
         .card {
           display: inline-flex;
-          border: 1rem solid #131512;
+          border: 0.5em solid #131512;
           flex-basis: 20rem;
-          flex-grow: 1;
-          flex-shrink: 1;
           height: auto;
-          width: 95%;
           margin-top: 1rem;
-          font-size: 29pt;
           font-weight: 600;
 
           .card-img {
@@ -411,103 +405,98 @@
         border: 4px solid black;
       }
 
-      .view-characters-btn {
-        margin-top: 5%;
-      }
-    }
+      .list-wrap {
+        height: auto;
+        max-width: 1360px;
+        display: flex;
+        flex-flow: column;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        background: rgb(69, 64, 64);
+        color: #27c208;
 
-    .character-list-wrap {
-      height: auto;
-      max-width: 1360px;
-      display: flex;
-      flex-flow: column;
-      justify-items: center;
-      align-items: center;
-      text-align: center;
-      background: rgb(69, 64, 64);
-      color: #27c208;
+        .home-btn {
+          margin-bottom: 1rem;
+          border-radius: 10px;
+          height: fit-content;
+          background-color: #fff;
+        }
 
-      .home-btn {
-        margin-bottom: 1rem;
-        border-radius: 10px;
-        height: fit-content;
-        background-color: #fff;
-      }
+        h1 {
+          font-size: 50pt;
+          margin-bottom: 2rem;
+        }
 
-      h1 {
-        font-size: 50pt;
-        margin-bottom: 2rem;
-      }
-
-      .search-form-wrap {
-        width: 100%;
-
-        form {
-          display: inline-flex;
-          flex-flow: column;
-          height: auto;
+        .search-form-wrap {
           width: 100%;
-          padding: 2rem 7rem;
 
-          .search-bar {
-            text-align: center;
-            border-radius: 10px;
+          form {
+            display: inline-flex;
+            flex-flow: column;
+            height: auto;
             width: 100%;
-            margin-bottom: 2rem;
-          }
+            padding: 2rem 7rem;
 
-          .search-button {
-            border-radius: 10px;
-            height: fit-content;
-            margin-bottom: 1rem;
+            .search-bar {
+              text-align: center;
+              border-radius: 10px;
+              width: 100%;
+              margin-bottom: 2rem;
+            }
+
+            .search-button {
+              border-radius: 10px;
+              height: fit-content;
+              margin-bottom: 1rem;
+            }
           }
         }
-      }
 
-      .character-list {
-        width: 100%;
-        max-width: 30rem;
-        max-height: auto;
-        margin-right: 4rem;
+        .inner-list {
+          width: 100%;
+          max-width: 30rem;
+          max-height: auto;
+          margin-right: 4rem;
 
-        .card {
-          display: inline-flex;
-          border: 0.6rem solid #131512;
-          flex-basis: 20rem;
-          flex-grow: 1;
-          flex-shrink: 1;
-          height: 15rem;
-          width: 15rem;
-          margin-top: 2rem;
-          border-radius: 25%;
+          .card {
+            display: inline-flex;
+            border: 0.6rem solid #131512;
+            flex-basis: 20rem;
+            flex-grow: 1;
+            flex-shrink: 1;
+            height: 15rem;
+            width: 15rem;
+            margin-top: 2rem;
+            border-radius: 25%;
 
-          .card-img {
-            border-radius: 20%;
+            .card-img {
+              border-radius: 20%;
 
-            .card-img-overlay {
-              display: flex;
-              flex-basis: inherit;
-              flex-shrink: 1;
+              .card-img-overlay {
+                display: flex;
+                flex-basis: inherit;
+                flex-shrink: 1;
+              }
             }
           }
         }
       }
-    }
 
-    .spinner-center {
-      height: auto;
-      width: 100%;
-      background-color: white;
-      display: flex;
-      justify-content: center;
-    }
+      .spinner-center {
+        height: auto;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+      }
 
-    .spinner {
-      height: 700px;
+      .spinner {
+        height: 700px;
+      }
     }
   }
 }
-
 /////////////////////////////////////////////////////////////////
 // breakpoint to handle smallest screen sizes. flip phones, etc.
 /////////////////////////////////////////////////////////////////

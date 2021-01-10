@@ -81,7 +81,7 @@ const CharacterList = props => {
         itemClass='page-item'
         linkClass='page-link'
       />
-      <div className='character-list'>
+      <div className='inner-list'>
         {characters.map(character => {
           return (
             <div key={character.id}>

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 
 export default function NavButtons (props) {
   //  set volume of the new sound  and play after page loads
-  props.theme.setVolume(0.572).play()
 
   return (
     <div className='nav-buttons'>
