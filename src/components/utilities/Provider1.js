@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import EpisodeCard from './EpisodeCard'
-import SearchForm from '../SearchForm'
-import Spinner from '../Spinner'
 
-import Pagination from 'react-js-pagination'
-import { NavLink } from 'react-router-dom'
+export const Provider1 = props => {
+  const [sounds, setSounds] = useState()
+  // create variables to hold theme music/ sfx on page load
+  const sfx1 = new UIfx(sf1)
+  const sfx2 = new UIfx(sf2)
+  const theme = new UIfx(themesong)
 
-import axios from 'axios'
-
-export default function EpsiodeList (props) {
   const [isLoading, setIsLoading] = useState(false)
   const [episodes, setEpisodes] = useState([])
   const [query, setQuery] = useState('')
@@ -71,45 +69,28 @@ export default function EpsiodeList (props) {
     setActivePage(pageNumber)
   }
 
-  console.log('props in EpisodeList: ', props)
-  return !isLoading ? (
-    <section className='list-wrap'>
-      <h1>Episode List</h1>
-      <button className='home-btn'>
-        <NavLink to='/'>Home</NavLink>
-      </button>
-      <div className='search-form-wrap'>
-        <SearchForm search={setQuery} name='Enter Episode' />
-      </div>
-      <div className='results-display'>
-        <h4>Results</h4>
-        <h3>{count}</h3>
-      </div>
-      <Pagination
-        activepage={activePage}
-        itemsCountPerPage={10}
-        totalItemsCount={count}
-        onChange={handlePageChange}
-        itemClass='page-item'
-        linkClass='page-link'
-      />
-      <div className='episode-list'>
-        {episodes.map(episode => {
-          return (
-            <div key={episode.id}>
-              <EpisodeCard
-                episodename={episode.name}
-                airdate={episode.air_date}
-                episode={episode.episode}
-                characters={episode.characters}
-                link={episode.url}
-              />
-            </div>
-          )
-        })}
-      </div>
-    </section>
-  ) : (
-    <Spinner />
+  // useEffect call to set sound FX to an array
+  useEffect(() => {
+    setSounds([sfx1, sfx2, theme])
+  }, [])
+
+  return (
+    <ApiContext.Provider
+      value={{
+        sounds: sounds,
+        handlePageChange: handlePageChange,
+        isLoading: isLoading,
+        setIsLoading: setIsLoading,
+        episodes: episodes,
+        setQuery: setQuery,
+        activePage: activePage,
+        count: count,
+        pages: pages
+      }}
+    >
+      {props.children}
+    </ApiContext.Provider>
   )
 }
+
+export const Context1 = React.createContext()

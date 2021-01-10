@@ -42,6 +42,7 @@ export default function LocationsList () {
         console.log('API data: ', res.data)
         setCount(res.data.info.count)
         setLocations(res.data.results)
+        console.log('pages prop in LocationsList component: ', pages)
         setIsLoading(false)
       })
       .catch(err => {
@@ -71,8 +72,8 @@ export default function LocationsList () {
       </div>
       <Pagination
         activepage={activePage}
-        itemsCountPerPage={20}
-        totalItemsCount={pages}
+        itemsCountPerPage={10}
+        totalItemsCount={count}
         onChange={handlePageChange}
         itemClass='page-item'
         linkClass='page-link'

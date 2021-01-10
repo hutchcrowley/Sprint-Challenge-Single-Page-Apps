@@ -14,6 +14,7 @@ const CharacterList = props => {
   const [characters, setCharacters] = useState([])
   const [query, setQuery] = useState('')
   const [activePage, setActivePage] = useState(null)
+  // create a variable to hold the total items count returned from API
   const [count, setCount] = useState(null)
   const [pages, setPages] = useState()
 
@@ -45,6 +46,7 @@ const CharacterList = props => {
         console.log('From the pagination useEffect call: ', res.data)
         setCount(res.data.info.count)
         setCharacters(res.data.results)
+        console.log('pages prop in LocationsList component: ', pages)
         setIsLoading(false)
       })
       .catch(err => {
@@ -74,7 +76,7 @@ const CharacterList = props => {
       <Pagination
         activePage={activePage}
         itemsCountPerPage={15}
-        totalItemsCount={pages}
+        totalItemsCount={count}
         onChange={handlePageChange}
         itemClass='page-item'
         linkClass='page-link'
