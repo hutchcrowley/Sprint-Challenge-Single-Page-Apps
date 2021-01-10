@@ -70,9 +70,9 @@ export default function EpsiodeList () {
   return !isLoading ? (
     <section className='list-wrap'>
       <h1>Episode List</h1>
-      <NavLink className='home-btn' to='/'>
-        Home
-      </NavLink>
+      <button className='home-btn'>
+        <NavLink to='/'>Home</NavLink>
+      </button>
       <div className='search-form-wrap'>
         <SearchForm search={setQuery} name='Enter Episode' />
       </div>
@@ -83,7 +83,7 @@ export default function EpsiodeList () {
       <Pagination
         activepage={activePage}
         itemsCountPerPage={20}
-        totalItensCount={pages}
+        totalItemsCount={pages}
         onChange={handlePageChange}
         itemClass='page-item'
         linkClass='page-link'

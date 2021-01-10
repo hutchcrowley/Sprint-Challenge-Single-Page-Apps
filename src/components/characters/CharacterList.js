@@ -21,7 +21,7 @@ const CharacterList = props => {
 
   useEffect(() => {
     axios
-      .get(`https://rickandmortyapi.com/api/character/?name=${query}`)
+      .get(`https://rickandmortyapi.com/api/character?name=${query}`)
       .then(setIsLoading(true))
       .then(res => {
         console.log('Data From the API: ', res.data)
@@ -39,7 +39,7 @@ const CharacterList = props => {
 
   useEffect(() => {
     axios
-      .get(`https://rickandmortyapi.com/api/character/?page=${activePage}`)
+      .get(`https://rickandmortyapi.com/api/character?page=${activePage}`)
       .then(setIsLoading(true))
       .then(res => {
         console.log('From the pagination useEffect call: ', res.data)
@@ -61,9 +61,9 @@ const CharacterList = props => {
   return !isLoading ? (
     <section className='list-wrap'>
       <h1>Character List</h1>
-      <input className='home-btn'>
+      <button className='home-btn'>
         <NavLink to='/'>Home</NavLink>
-      </input>
+      </button>
       <div className='search-form-wrap'>
         <SearchForm search={setQuery} name='Enter Character' />
       </div>
@@ -73,7 +73,7 @@ const CharacterList = props => {
       </div>
       <Pagination
         activePage={activePage}
-        itemsCountPerPage={20}
+        itemsCountPerPage={15}
         totalItemsCount={pages}
         onChange={handlePageChange}
         itemClass='page-item'
@@ -84,6 +84,7 @@ const CharacterList = props => {
           return (
             <div key={character.id}>
               <CharacterCard
+                id={character.id}
                 image={character.image}
                 name={character.name}
                 status={character.status}

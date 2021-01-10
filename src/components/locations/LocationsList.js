@@ -59,9 +59,9 @@ export default function LocationsList () {
   return !isLoading ? (
     <section className='list-wrap'>
       <h1>Location List</h1>
-      <NavLink className='home-btn' to='/'>
-        Home
-      </NavLink>
+      <button className='home-btn'>
+        <NavLink to='/'>Home</NavLink>
+      </button>
       <div className='search-form-wrap'>
         <SearchForm search={setQuery} name='Enter Location' />
       </div>

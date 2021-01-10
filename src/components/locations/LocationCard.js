@@ -8,7 +8,7 @@ const LocationCard = ({ name, type, dimension, residents, id, key }) => {
 
   // slicing the array of residents per location to implement a display more button
   const [residentArr, setResidentArr] = useState([])
-  // setting a variable to show the unmber of items to display based upon user input
+  // setting a variable to show the unmber of items to display based upon user input`
   const [idArray, setIdArray] = useState([])
 
   // function to handle displaying residents per location

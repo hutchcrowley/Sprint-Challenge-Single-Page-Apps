@@ -17,10 +17,10 @@ export default function CharacterCard (props) {
           <h3 className='card-text-h3'>{props.species}</h3>
           {/* Check to see if the character has a valid type and render if so, if not render nothing */}
           {props.type ? (
-            <div>
+            <>
               <h2>Type:</h2>
               <h3 className='card-text-h3'>{props.type}</h3>
-            </div>
+            </>
           ) : null}
 
           <h2>Gender:</h2>
